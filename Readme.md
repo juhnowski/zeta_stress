@@ -68,17 +68,33 @@ echo "0" > riemann_block_pointer.txt
 ```
 
 
-#!/usr/bin/env bash
-
 # Стартовые параметры проекта Zeta-Stress (от 1 триллиона)
 ```bash
-nix-shell -p tmux --run "tmux new-session -A -s zeta '
+nix-shell -p tmux --run "tmux new-session -A -s zeta"
 ./run_pipeline.sh
-'"
 ```
 
+# Команда для чтения первых 10 нулей прямо из сырого диска:bash# Читаем первые 80 байт (10 нулей по 8 байт) с самого начала устройства /dev/md0
+```bash
+sudo od -An -t fD -N 80 /dev/md0
+```
+# Прогресс
+```bash
+./check_progress.sh
+```
 
+# выкачать накопленные гигабайты:
+```bash
+# Читаем строго тот объем, который записан (берем размер из riemann_block_pointer.txt)
+# Пример для выкачивания первых 10 Гб сгенерированных нулей в монолитный файл
+ssh ilya@<ip_сервера> "sudo dd if=/dev/md0 bs=1M count=10000 status=progress" > my_riemann_zeros_triLLion.bin
+```
 
+# Агрегация нулей по блокам
+в файле:
+```bash
+riemann_chunks_summary.csv
+```
 
 # Для Haskell версии
 # Построение
