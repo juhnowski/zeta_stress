@@ -1,0 +1,19 @@
+# Сгенерированные бинарники и файлы сборки Haskell
+zeta_stress
+*.o
+*.hi
+.ghc.environment.*
+
+# Результаты вычислений и Big Data файлы (бинарные и CSV)
+riemann_zeros_raw.bin
+riemann_zeros_10^12.txt
+riemann_chunks_summary.csv
+
+# Локальная база данных InfluxDB
+influx_data/
+
+# Директории сборки и кэша Nix
+.nix-mix/
+.nix-profile/
+result
+result-*

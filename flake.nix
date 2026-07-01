@@ -81,7 +81,7 @@
         # Сборка финального оптимизированного бинарника математического движка
         packages.default = pkgs.stdenv.mkDerivation {
           pname = "zeta_stress";
-          version = "1.0.1";
+          version = "1.0.3";
           src = ./.;
 
           nativeBuildInputs = [ 

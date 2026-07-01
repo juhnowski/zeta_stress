@@ -23,6 +23,8 @@ nix-shell -p tmux --run "tmux new-session -A -s zeta '
   done
 '"
 ```
+
+
 # Подключиться к расчету
 ```bash
 nix-shell -p tmux --run "tmux a -t zeta"

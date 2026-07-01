@@ -1,5 +1,4 @@
 {-# LANGUAGE BangPatterns #-}
-{-# LANGUAGE OverloadedStrings #-}
 
 import Control.Concurrent.Async (mapConcurrently)
 import Control.Parallel.Strategies (withStrategy, parListChunk, rdeepseq)
@@ -11,21 +10,8 @@ import Data.List (foldl')
 import GHC.Conc (numCapabilities)
 import System.Environment (getArgs)
 import Text.Printf (printf)
-import Control.Monad (zipWithM_) -- Обязательно для последовательной индексированной отправки
-
--- Импорты для работы с InfluxDB HTTP API
-import qualified Network.Wreq as W
-import Control.Lens ((&), (.~))
-import qualified Data.ByteString.Char8 as BS
-import qualified Data.ByteString.Lazy.Char8 as BL
-import Network.HTTP.Client (defaultManagerSettings, newManager)
 
 type ComplexDouble = Complex Double
-
--- Собственная реализация разбиения списка на чанки без внешних зависимостей
-chunksOf :: Int -> [a] -> [[a]]
-chunksOf _ [] = []
-chunksOf n xs = let (first, rest) = splitAt n xs in first : chunksOf n rest
 
 -- | 1. Математическое ядро: подготовка коэффициентов с Zero Padding до размера FFT-окна
 prepareCoefficients :: Int -> Double -> Int -> Int -> V.Vector ComplexDouble
@@ -83,45 +69,6 @@ processPipeline !globalStart !globalEnd !blockSize = do
                          
     return $ concat chunksOfZeros
 
--- | 5. СТАБИЛЬНАЯ ФУНКЦИЯ ЗАПИСИ (Последовательный стриминг батчей через zipWithM_)
-sendToInflux :: String -> [Double] -> IO ()
-sendToInflux _ [] = return ()
-sendToInflux blockNumStr zeros = do
-    let host = "http://127.0.0.1:8086"
-        path = "/api/v2/write"
-        queryOrg = "?org=zeta_org"
-        queryBucket = "&bucket=zeta_bucket"
-        queryPrecision = "&precision=ns"
-        url = host ++ path ++ queryOrg ++ queryBucket ++ queryPrecision
-
-    let token = "ZetaStressSecretToken2026FFFFFFFFFFFF" 
-        
-        opts = W.defaults 
-             & W.header "Authorization" .~ [BS.pack ("Token " ++ token)]
-             & W.header "Content-Type" .~ [BS.pack "text/plain; charset=utf-8"]
-
-    let sizeBatches = 200000
-        chunks = chunksOf sizeBatches zeros
-        totalChunks = length chunks
-
-    putStrLn $ "Отправка в InfluxDB (" ++ show totalChunks ++ " батчей по " ++ show sizeBatches ++ " точек)..."
-
-    let indices = [1 .. totalChunks] :: [Int]
-    
-    -- Последовательный обход: защищает локальный сервер InfluxDB от сетевого перегруза
-    zipWithM_ (\idx chunk -> do
-        let payloadLines = map (\z -> "riemann_zeta,block=" ++ blockNumStr ++ " value=" ++ show z) chunk
-            payloadBody  = BL.pack (unlines payloadLines)
-        
-        _ <- W.postWith opts url payloadBody
-        
-        if idx `mod` 50 == 0 || idx == totalChunks
-            then printf "  [Запись] Доставлено батчей: %d/%d\n" idx totalChunks
-            else return ()
-      ) indices chunks
-
-    putStrLn "[+] Все батчи успешно доставлены в InfluxDB без перегрузки сервера."
-
 main :: IO ()
 main = do
     args <- getArgs
@@ -136,16 +83,31 @@ main = do
             let (!totalCount, !last10) = foldl' (\(!cnt, !acc) z -> 
                     (cnt + 1, drop (if length acc >= 10 then 1 else 0) acc ++ [z])) (0, []) allZeros :: (Int, [Double])
             
-            let filePath = "riemann_chunks_summary.csv"
-            withFile filePath AppendMode $ \handle -> do
+            -- ОПТИМИЗАЦИЯ 1: Запись агрегированного CSV-сводника на диск
+            let csvPath = "riemann_chunks_summary.csv"
+            withFile csvPath AppendMode $ \handle -> do
                 hPutStrLn handle $ blockNumStr ++ ";" ++ startStr ++ ";" ++ endStr ++ ";" ++ show totalCount
                 
-            sendToInflux blockNumStr allZeros
+            -- ОПТИМИЗАЦИЯ 2: Молниеносный сброс вектора Double на диск через hPutBuf
+            let binaryPath = "riemann_zeros_raw.bin"
+                storableVector = V.fromList allZeros
+                -- Общее количество элементов (Double) в векторе
+                countElements = V.length storableVector
+                -- Размер одного Double равен 8 байтам
+                sizeInBytes = countElements * 8 
+
+            withFile binaryPath AppendMode $ \binHandle -> do
+                hSetBuffering binHandle (BlockBuffering (Just 67108864)) -- Буфер 64 МБ
+                -- Открываем безопасный доступ к сырому Си-указателю вектора в памяти
+                V.unsafeWith storableVector $ \ptr ->
+                    -- Сбрасываем весь массив на диск одной бинарной командой
+                    hPutBuf binHandle ptr sizeInBytes
+
                 
             putStrLn "========================================"
             printf "Блок №%s успешно обработан.\n" blockNumStr
             printf "Интервал: от %.1f до %.1f\n" tStart tEnd
-            printf "Найдено нулей в этом батче: %d\n" totalCount
+            printf "Найдено и сохранено в бинарный файл нулей: %d\n" totalCount
             printf "Последние 10 найденных мнимых частей:\n"
             mapM_ (\z -> printf "  t = %.4f\n" z) last10
             putStrLn "========================================"
