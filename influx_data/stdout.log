@@ -1,0 +1,257 @@
+ts=2026-07-01T11:39:08.149069Z lvl=info msg="Welcome to InfluxDB" log_id=13oNSgy0000 version=2.7.12 commit=v2.7.12 build_date=2026-07-01T11:39:08Z log_level=info
+ts=2026-07-01T11:39:08.150153Z lvl=info msg="Resources opened" log_id=13oNSgy0000 service=bolt path=/home/ilya/zeta-stress/influx_data/influxd.bolt
+ts=2026-07-01T11:39:08.150210Z lvl=info msg="Resources opened" log_id=13oNSgy0000 service=sqlite path=/home/ilya/zeta-stress/influx_data/influxd.sqlite
+ts=2026-07-01T11:39:08.150432Z lvl=info msg="Bringing up metadata migrations" log_id=13oNSgy0000 service="KV migrations" migration_count=20
+ts=2026-07-01T11:39:08.169432Z lvl=info msg="Bringing up metadata migrations" log_id=13oNSgy0000 service="SQL migrations" migration_count=8
+ts=2026-07-01T11:39:08.178917Z lvl=info msg="Using data dir" log_id=13oNSgy0000 service=storage-engine service=store path=/home/ilya/zeta-stress/influx_data/engine/data
+ts=2026-07-01T11:39:08.178990Z lvl=info msg="Compaction settings" log_id=13oNSgy0000 service=storage-engine service=store max_concurrent_compactions=64 throughput_bytes_per_second=50331648 throughput_bytes_per_second_burst=50331648
+ts=2026-07-01T11:39:08.178996Z lvl=info msg="Open store (start)" log_id=13oNSgy0000 service=storage-engine service=store op_name=tsdb_open op_event=start
+ts=2026-07-01T11:39:08.179040Z lvl=info msg="Open store (end)" log_id=13oNSgy0000 service=storage-engine service=store op_name=tsdb_open op_event=end op_elapsed=0.045ms
+ts=2026-07-01T11:39:08.179058Z lvl=info msg="Starting retention policy enforcement service" log_id=13oNSgy0000 service=retention check_interval=30m
+ts=2026-07-01T11:39:08.179064Z lvl=info msg="Starting precreation service" log_id=13oNSgy0000 service=shard-precreation check_interval=10m advance_period=30m
+ts=2026-07-01T11:39:08.179520Z lvl=info msg="Starting query controller" log_id=13oNSgy0000 service=storage-reads concurrency_quota=1024 initial_memory_bytes_quota_per_query=9223372036854775807 memory_bytes_quota_per_query=9223372036854775807 max_memory_bytes=0 queue_size=1024
+ts=2026-07-01T11:39:08.188648Z lvl=info msg="Configuring InfluxQL statement executor (zeros indicate unlimited)." log_id=13oNSgy0000 max_select_point=0 max_select_series=0 max_select_buckets=0
+ts=2026-07-01T11:39:08.194848Z lvl=info msg=Starting log_id=13oNSgy0000 service=telemetry interval=8h
+ts=2026-07-01T11:39:08.194928Z lvl=info msg=Listening log_id=13oNSgy0000 service=tcp-listener transport=http addr=127.0.0.1:8086 port=8086
+ts=2026-07-01T11:40:57.955654Z lvl=info msg=Unauthorized log_id=13oNSgy0000 error="authorization not found"
+ts=2026-07-01T11:42:03.655489Z lvl=info msg=Unauthorized log_id=13oNSgy0000 error="authorization not found"
+ts=2026-07-01T11:46:37.332867Z lvl=info msg="index opened with 8 partitions" log_id=13oNSgy0000 service=storage-engine index=tsi
+ts=2026-07-01T11:46:37.333086Z lvl=info msg="loading changes (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name="field indices" path=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1/fields.idxl op_event=start
+ts=2026-07-01T11:46:37.333103Z lvl=info msg="loading changes (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name="field indices" path=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1/fields.idxl op_event=end op_elapsed=0.024ms
+ts=2026-07-01T11:46:37.333180Z lvl=info msg="Reindexing TSM data" log_id=13oNSgy0000 service=storage-engine engine=tsm1 db_shard_id=1
+ts=2026-07-01T11:46:37.333192Z lvl=info msg="Reindexing WAL data" log_id=13oNSgy0000 service=storage-engine engine=tsm1 db_shard_id=1
+ts=2026-07-01T11:46:37.625066Z lvl=info msg="saving field index changes (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=MeasurementFieldSet op_event=start
+ts=2026-07-01T11:46:37.625827Z lvl=info msg="saving field index changes (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=MeasurementFieldSet op_event=end op_elapsed=0.830ms
+ts=2026-07-01T11:46:48.334615Z lvl=info msg="Cache snapshot (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=start
+ts=2026-07-01T11:46:48.377122Z lvl=info msg="Purge held files (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=start
+ts=2026-07-01T11:46:48.377148Z lvl=info msg=added log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger count=0
+ts=2026-07-01T11:46:48.377174Z lvl=info msg=removed log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger files=0
+ts=2026-07-01T11:46:48.377200Z lvl=info msg="Purge held files (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=end op_elapsed=0.095ms
+ts=2026-07-01T11:46:48.378608Z lvl=info msg="Snapshot for path written" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot path=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1 duration=44.000ms
+ts=2026-07-01T11:46:48.378620Z lvl=info msg="Cache snapshot (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=end op_elapsed=44.018ms
+ts=2026-07-01T11:46:59.334578Z lvl=info msg="Cache snapshot (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=start
+ts=2026-07-01T11:46:59.382392Z lvl=info msg="Purge held files (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=start
+ts=2026-07-01T11:46:59.382415Z lvl=info msg=added log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger count=0
+ts=2026-07-01T11:46:59.382503Z lvl=info msg=removed log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger files=0
+ts=2026-07-01T11:46:59.382543Z lvl=info msg="Purge held files (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=end op_elapsed=0.159ms
+ts=2026-07-01T11:46:59.384262Z lvl=info msg="Snapshot for path written" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot path=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1 duration=49.728ms
+ts=2026-07-01T11:46:59.384275Z lvl=info msg="Cache snapshot (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=end op_elapsed=49.745ms
+ts=2026-07-01T11:47:13.334002Z lvl=info msg="Cache snapshot (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=start
+ts=2026-07-01T11:47:13.376379Z lvl=info msg="Purge held files (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=start
+ts=2026-07-01T11:47:13.376413Z lvl=info msg=added log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger count=0
+ts=2026-07-01T11:47:13.376494Z lvl=info msg=removed log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger files=0
+ts=2026-07-01T11:47:13.376512Z lvl=info msg="Purge held files (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=end op_elapsed=0.143ms
+ts=2026-07-01T11:47:13.378032Z lvl=info msg="Snapshot for path written" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot path=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1 duration=44.064ms
+ts=2026-07-01T11:47:13.378046Z lvl=info msg="Cache snapshot (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=end op_elapsed=44.086ms
+ts=2026-07-01T11:47:27.334709Z lvl=info msg="Cache snapshot (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=start
+ts=2026-07-01T11:47:27.380859Z lvl=info msg="Purge held files (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=start
+ts=2026-07-01T11:47:27.380888Z lvl=info msg=added log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger count=0
+ts=2026-07-01T11:47:27.380917Z lvl=info msg=removed log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger files=0
+ts=2026-07-01T11:47:27.380963Z lvl=info msg="Purge held files (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=end op_elapsed=0.123ms
+ts=2026-07-01T11:47:27.382837Z lvl=info msg="Snapshot for path written" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot path=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1 duration=48.174ms
+ts=2026-07-01T11:47:27.382851Z lvl=info msg="Cache snapshot (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=end op_elapsed=48.195ms
+ts=2026-07-01T11:47:40.334133Z lvl=info msg="Cache snapshot (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=start
+ts=2026-07-01T11:47:40.380297Z lvl=info msg="Purge held files (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=start
+ts=2026-07-01T11:47:40.380325Z lvl=info msg=added log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger count=0
+ts=2026-07-01T11:47:40.380350Z lvl=info msg=removed log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger files=0
+ts=2026-07-01T11:47:40.380392Z lvl=info msg="Purge held files (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=end op_elapsed=0.109ms
+ts=2026-07-01T11:47:40.382175Z lvl=info msg="Snapshot for path written" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot path=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1 duration=48.062ms
+ts=2026-07-01T11:47:40.382188Z lvl=info msg="Cache snapshot (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=end op_elapsed=48.082ms
+ts=2026-07-01T11:47:54.334416Z lvl=info msg="Cache snapshot (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=start
+ts=2026-07-01T11:47:54.378648Z lvl=info msg="Purge held files (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=start
+ts=2026-07-01T11:47:54.378677Z lvl=info msg=added log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger count=0
+ts=2026-07-01T11:47:54.378763Z lvl=info msg=removed log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger files=0
+ts=2026-07-01T11:47:54.378804Z lvl=info msg="Purge held files (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=end op_elapsed=0.158ms
+ts=2026-07-01T11:47:54.380279Z lvl=info msg="Snapshot for path written" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot path=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1 duration=45.907ms
+ts=2026-07-01T11:47:54.380293Z lvl=info msg="Cache snapshot (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=end op_elapsed=45.936ms
+ts=2026-07-01T11:48:07.333780Z lvl=info msg="Cache snapshot (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=start
+ts=2026-07-01T11:48:07.380075Z lvl=info msg="Purge held files (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=start
+ts=2026-07-01T11:48:07.380095Z lvl=info msg=added log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger count=0
+ts=2026-07-01T11:48:07.380177Z lvl=info msg=removed log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger files=0
+ts=2026-07-01T11:48:07.380211Z lvl=info msg="Purge held files (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=end op_elapsed=0.152ms
+ts=2026-07-01T11:48:07.381902Z lvl=info msg="Snapshot for path written" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot path=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1 duration=48.148ms
+ts=2026-07-01T11:48:07.381913Z lvl=info msg="Cache snapshot (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=end op_elapsed=48.165ms
+ts=2026-07-01T11:48:21.334729Z lvl=info msg="Cache snapshot (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=start
+ts=2026-07-01T11:48:21.375106Z lvl=info msg="Purge held files (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=start
+ts=2026-07-01T11:48:21.375128Z lvl=info msg=added log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger count=0
+ts=2026-07-01T11:48:21.375217Z lvl=info msg=removed log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger files=0
+ts=2026-07-01T11:48:21.375259Z lvl=info msg="Purge held files (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=end op_elapsed=0.160ms
+ts=2026-07-01T11:48:21.376816Z lvl=info msg="Snapshot for path written" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot path=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1 duration=42.137ms
+ts=2026-07-01T11:48:21.376831Z lvl=info msg="Cache snapshot (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=end op_elapsed=42.156ms
+ts=2026-07-01T11:48:22.334565Z lvl=info msg="TSM compaction (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 tsm1_level=1 tsm1_strategy=level op_name=tsm1_compact_group op_event=start
+ts=2026-07-01T11:48:22.334641Z lvl=info msg="Beginning compaction" log_id=13oNSgy0000 service=storage-engine engine=tsm1 tsm1_level=1 tsm1_strategy=level op_name=tsm1_compact_group tsm1_files_n=8
+ts=2026-07-01T11:48:22.334648Z lvl=info msg="Compacting file" log_id=13oNSgy0000 service=storage-engine engine=tsm1 tsm1_level=1 tsm1_strategy=level op_name=tsm1_compact_group tsm1_index=0 tsm1_file=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1/000000001-000000001.tsm
+ts=2026-07-01T11:48:22.334652Z lvl=info msg="Compacting file" log_id=13oNSgy0000 service=storage-engine engine=tsm1 tsm1_level=1 tsm1_strategy=level op_name=tsm1_compact_group tsm1_index=1 tsm1_file=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1/000000002-000000001.tsm
+ts=2026-07-01T11:48:22.334655Z lvl=info msg="Compacting file" log_id=13oNSgy0000 service=storage-engine engine=tsm1 tsm1_level=1 tsm1_strategy=level op_name=tsm1_compact_group tsm1_index=2 tsm1_file=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1/000000003-000000001.tsm
+ts=2026-07-01T11:48:22.334658Z lvl=info msg="Compacting file" log_id=13oNSgy0000 service=storage-engine engine=tsm1 tsm1_level=1 tsm1_strategy=level op_name=tsm1_compact_group tsm1_index=3 tsm1_file=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1/000000004-000000001.tsm
+ts=2026-07-01T11:48:22.334664Z lvl=info msg="Compacting file" log_id=13oNSgy0000 service=storage-engine engine=tsm1 tsm1_level=1 tsm1_strategy=level op_name=tsm1_compact_group tsm1_index=4 tsm1_file=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1/000000005-000000001.tsm
+ts=2026-07-01T11:48:22.334667Z lvl=info msg="Compacting file" log_id=13oNSgy0000 service=storage-engine engine=tsm1 tsm1_level=1 tsm1_strategy=level op_name=tsm1_compact_group tsm1_index=5 tsm1_file=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1/000000006-000000001.tsm
+ts=2026-07-01T11:48:22.334677Z lvl=info msg="Compacting file" log_id=13oNSgy0000 service=storage-engine engine=tsm1 tsm1_level=1 tsm1_strategy=level op_name=tsm1_compact_group tsm1_index=6 tsm1_file=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1/000000007-000000001.tsm
+ts=2026-07-01T11:48:22.334680Z lvl=info msg="Compacting file" log_id=13oNSgy0000 service=storage-engine engine=tsm1 tsm1_level=1 tsm1_strategy=level op_name=tsm1_compact_group tsm1_index=7 tsm1_file=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1/000000008-000000001.tsm
+ts=2026-07-01T11:48:22.336260Z lvl=info msg="Purge held files (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=start
+ts=2026-07-01T11:48:22.336278Z lvl=info msg=added log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger count=0
+ts=2026-07-01T11:48:22.336291Z lvl=info msg="Compacted file" log_id=13oNSgy0000 service=storage-engine engine=tsm1 tsm1_level=1 tsm1_strategy=level op_name=tsm1_compact_group tsm1_index=0 tsm1_file=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1/000000008-000000002.tsm.tmp
+ts=2026-07-01T11:48:22.336294Z lvl=info msg="Finished compacting files" log_id=13oNSgy0000 service=storage-engine engine=tsm1 tsm1_level=1 tsm1_strategy=level op_name=tsm1_compact_group tsm1_files_n=1
+ts=2026-07-01T11:48:22.336297Z lvl=info msg="TSM compaction (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 tsm1_level=1 tsm1_strategy=level op_name=tsm1_compact_group op_event=end op_elapsed=1.736ms
+ts=2026-07-01T11:48:22.336316Z lvl=info msg=removed log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger files=0
+ts=2026-07-01T11:48:22.336321Z lvl=info msg="Purge held files (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=end op_elapsed=0.063ms
+ts=2026-07-01T11:48:34.334177Z lvl=info msg="Cache snapshot (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=start
+ts=2026-07-01T11:48:34.374215Z lvl=info msg="Purge held files (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=start
+ts=2026-07-01T11:48:34.374243Z lvl=info msg=added log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger count=0
+ts=2026-07-01T11:48:34.374337Z lvl=info msg=removed log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger files=0
+ts=2026-07-01T11:48:34.374413Z lvl=info msg="Purge held files (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=end op_elapsed=0.214ms
+ts=2026-07-01T11:48:34.375805Z lvl=info msg="Snapshot for path written" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot path=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1 duration=41.657ms
+ts=2026-07-01T11:48:34.375820Z lvl=info msg="Cache snapshot (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=end op_elapsed=41.682ms
+ts=2026-07-01T11:48:46.334727Z lvl=info msg="Cache snapshot (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=start
+ts=2026-07-01T11:48:46.378569Z lvl=info msg="Purge held files (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=start
+ts=2026-07-01T11:48:46.378590Z lvl=info msg=added log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger count=0
+ts=2026-07-01T11:48:46.378678Z lvl=info msg=removed log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger files=0
+ts=2026-07-01T11:48:46.378698Z lvl=info msg="Purge held files (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=end op_elapsed=0.142ms
+ts=2026-07-01T11:48:46.380119Z lvl=info msg="Snapshot for path written" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot path=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1 duration=45.437ms
+ts=2026-07-01T11:48:46.380131Z lvl=info msg="Cache snapshot (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=end op_elapsed=45.456ms
+ts=2026-07-01T11:48:59.333955Z lvl=info msg="Cache snapshot (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=start
+ts=2026-07-01T11:48:59.378079Z lvl=info msg="Purge held files (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=start
+ts=2026-07-01T11:48:59.378105Z lvl=info msg=added log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger count=0
+ts=2026-07-01T11:48:59.378132Z lvl=info msg=removed log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger files=0
+ts=2026-07-01T11:48:59.378179Z lvl=info msg="Purge held files (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=end op_elapsed=0.107ms
+ts=2026-07-01T11:48:59.380036Z lvl=info msg="Snapshot for path written" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot path=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1 duration=46.135ms
+ts=2026-07-01T11:48:59.380051Z lvl=info msg="Cache snapshot (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=end op_elapsed=46.158ms
+ts=2026-07-01T11:49:11.334577Z lvl=info msg="Cache snapshot (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=start
+ts=2026-07-01T11:49:11.374877Z lvl=info msg="Purge held files (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=start
+ts=2026-07-01T11:49:11.374895Z lvl=info msg=added log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger count=0
+ts=2026-07-01T11:49:11.374981Z lvl=info msg=removed log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger files=0
+ts=2026-07-01T11:49:11.375028Z lvl=info msg="Purge held files (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=end op_elapsed=0.165ms
+ts=2026-07-01T11:49:11.376624Z lvl=info msg="Snapshot for path written" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot path=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1 duration=42.087ms
+ts=2026-07-01T11:49:11.376639Z lvl=info msg="Cache snapshot (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=end op_elapsed=42.106ms
+ts=2026-07-01T11:49:22.334642Z lvl=info msg="Cache snapshot (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=start
+ts=2026-07-01T11:49:22.374340Z lvl=info msg="Purge held files (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=start
+ts=2026-07-01T11:49:22.374370Z lvl=info msg=added log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger count=0
+ts=2026-07-01T11:49:22.374450Z lvl=info msg=removed log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger files=0
+ts=2026-07-01T11:49:22.374470Z lvl=info msg="Purge held files (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=end op_elapsed=0.140ms
+ts=2026-07-01T11:49:22.375924Z lvl=info msg="Snapshot for path written" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot path=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1 duration=41.312ms
+ts=2026-07-01T11:49:22.375942Z lvl=info msg="Cache snapshot (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=end op_elapsed=41.335ms
+ts=2026-07-01T11:49:33.333907Z lvl=info msg="Cache snapshot (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=start
+ts=2026-07-01T11:49:33.376290Z lvl=info msg="Purge held files (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=start
+ts=2026-07-01T11:49:33.376323Z lvl=info msg=added log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger count=0
+ts=2026-07-01T11:49:33.376411Z lvl=info msg=removed log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger files=0
+ts=2026-07-01T11:49:33.376465Z lvl=info msg="Purge held files (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=end op_elapsed=0.195ms
+ts=2026-07-01T11:49:33.377924Z lvl=info msg="Snapshot for path written" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot path=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1 duration=44.055ms
+ts=2026-07-01T11:49:33.377943Z lvl=info msg="Cache snapshot (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=end op_elapsed=44.081ms
+ts=2026-07-01T11:49:45.334138Z lvl=info msg="Cache snapshot (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=start
+ts=2026-07-01T11:49:45.375036Z lvl=info msg="Purge held files (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=start
+ts=2026-07-01T11:49:45.375065Z lvl=info msg=added log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger count=0
+ts=2026-07-01T11:49:45.375102Z lvl=info msg=removed log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger files=0
+ts=2026-07-01T11:49:45.375147Z lvl=info msg="Purge held files (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=end op_elapsed=0.132ms
+ts=2026-07-01T11:49:45.377106Z lvl=info msg="Snapshot for path written" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot path=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1 duration=43.009ms
+ts=2026-07-01T11:49:45.377123Z lvl=info msg="Cache snapshot (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=end op_elapsed=43.031ms
+ts=2026-07-01T11:49:55.334140Z lvl=info msg="Cache snapshot (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=start
+ts=2026-07-01T11:49:55.376595Z lvl=info msg="Purge held files (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=start
+ts=2026-07-01T11:49:55.376620Z lvl=info msg=added log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger count=0
+ts=2026-07-01T11:49:55.376707Z lvl=info msg=removed log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger files=0
+ts=2026-07-01T11:49:55.376768Z lvl=info msg="Purge held files (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=end op_elapsed=0.182ms
+ts=2026-07-01T11:49:55.378423Z lvl=info msg="Snapshot for path written" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot path=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1 duration=44.309ms
+ts=2026-07-01T11:49:55.378440Z lvl=info msg="Cache snapshot (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=end op_elapsed=44.332ms
+ts=2026-07-01T11:49:56.333938Z lvl=info msg="TSM compaction (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 tsm1_level=1 tsm1_strategy=level op_name=tsm1_compact_group op_event=start
+ts=2026-07-01T11:49:56.333987Z lvl=info msg="Beginning compaction" log_id=13oNSgy0000 service=storage-engine engine=tsm1 tsm1_level=1 tsm1_strategy=level op_name=tsm1_compact_group tsm1_files_n=8
+ts=2026-07-01T11:49:56.333991Z lvl=info msg="Compacting file" log_id=13oNSgy0000 service=storage-engine engine=tsm1 tsm1_level=1 tsm1_strategy=level op_name=tsm1_compact_group tsm1_index=0 tsm1_file=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1/000000009-000000001.tsm
+ts=2026-07-01T11:49:56.333994Z lvl=info msg="Compacting file" log_id=13oNSgy0000 service=storage-engine engine=tsm1 tsm1_level=1 tsm1_strategy=level op_name=tsm1_compact_group tsm1_index=1 tsm1_file=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1/000000010-000000001.tsm
+ts=2026-07-01T11:49:56.333996Z lvl=info msg="Compacting file" log_id=13oNSgy0000 service=storage-engine engine=tsm1 tsm1_level=1 tsm1_strategy=level op_name=tsm1_compact_group tsm1_index=2 tsm1_file=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1/000000011-000000001.tsm
+ts=2026-07-01T11:49:56.333999Z lvl=info msg="Compacting file" log_id=13oNSgy0000 service=storage-engine engine=tsm1 tsm1_level=1 tsm1_strategy=level op_name=tsm1_compact_group tsm1_index=3 tsm1_file=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1/000000012-000000001.tsm
+ts=2026-07-01T11:49:56.334001Z lvl=info msg="Compacting file" log_id=13oNSgy0000 service=storage-engine engine=tsm1 tsm1_level=1 tsm1_strategy=level op_name=tsm1_compact_group tsm1_index=4 tsm1_file=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1/000000013-000000001.tsm
+ts=2026-07-01T11:49:56.334004Z lvl=info msg="Compacting file" log_id=13oNSgy0000 service=storage-engine engine=tsm1 tsm1_level=1 tsm1_strategy=level op_name=tsm1_compact_group tsm1_index=5 tsm1_file=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1/000000014-000000001.tsm
+ts=2026-07-01T11:49:56.334006Z lvl=info msg="Compacting file" log_id=13oNSgy0000 service=storage-engine engine=tsm1 tsm1_level=1 tsm1_strategy=level op_name=tsm1_compact_group tsm1_index=6 tsm1_file=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1/000000015-000000001.tsm
+ts=2026-07-01T11:49:56.334009Z lvl=info msg="Compacting file" log_id=13oNSgy0000 service=storage-engine engine=tsm1 tsm1_level=1 tsm1_strategy=level op_name=tsm1_compact_group tsm1_index=7 tsm1_file=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1/000000016-000000001.tsm
+ts=2026-07-01T11:49:56.335274Z lvl=info msg="Purge held files (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=start
+ts=2026-07-01T11:49:56.335291Z lvl=info msg=added log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger count=0
+ts=2026-07-01T11:49:56.335304Z lvl=info msg="Compacted file" log_id=13oNSgy0000 service=storage-engine engine=tsm1 tsm1_level=1 tsm1_strategy=level op_name=tsm1_compact_group tsm1_index=0 tsm1_file=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1/000000016-000000002.tsm.tmp
+ts=2026-07-01T11:49:56.335307Z lvl=info msg="Finished compacting files" log_id=13oNSgy0000 service=storage-engine engine=tsm1 tsm1_level=1 tsm1_strategy=level op_name=tsm1_compact_group tsm1_files_n=1
+ts=2026-07-01T11:49:56.335310Z lvl=info msg="TSM compaction (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 tsm1_level=1 tsm1_strategy=level op_name=tsm1_compact_group op_event=end op_elapsed=1.375ms
+ts=2026-07-01T11:49:56.335321Z lvl=info msg=removed log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger files=0
+ts=2026-07-01T11:49:56.335355Z lvl=info msg="Purge held files (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=end op_elapsed=0.081ms
+ts=2026-07-01T11:50:06.334060Z lvl=info msg="Cache snapshot (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=start
+ts=2026-07-01T11:50:06.371797Z lvl=info msg="Purge held files (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=start
+ts=2026-07-01T11:50:06.371826Z lvl=info msg=added log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger count=0
+ts=2026-07-01T11:50:06.371910Z lvl=info msg=removed log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger files=0
+ts=2026-07-01T11:50:06.371946Z lvl=info msg="Purge held files (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=end op_elapsed=0.172ms
+ts=2026-07-01T11:50:06.373642Z lvl=info msg="Snapshot for path written" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot path=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1 duration=39.624ms
+ts=2026-07-01T11:50:06.373651Z lvl=info msg="Cache snapshot (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=end op_elapsed=39.639ms
+ts=2026-07-01T11:50:16.334402Z lvl=info msg="Cache snapshot (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=start
+ts=2026-07-01T11:50:16.377967Z lvl=info msg="Purge held files (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=start
+ts=2026-07-01T11:50:16.377990Z lvl=info msg=added log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger count=0
+ts=2026-07-01T11:50:16.378015Z lvl=info msg=removed log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger files=0
+ts=2026-07-01T11:50:16.378044Z lvl=info msg="Purge held files (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=end op_elapsed=0.089ms
+ts=2026-07-01T11:50:16.379955Z lvl=info msg="Snapshot for path written" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot path=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1 duration=45.595ms
+ts=2026-07-01T11:50:16.379969Z lvl=info msg="Cache snapshot (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=end op_elapsed=45.615ms
+ts=2026-07-01T11:50:26.334321Z lvl=info msg="Cache snapshot (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=start
+ts=2026-07-01T11:50:26.375322Z lvl=info msg="Purge held files (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=start
+ts=2026-07-01T11:50:26.375355Z lvl=info msg=added log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger count=0
+ts=2026-07-01T11:50:26.375378Z lvl=info msg=removed log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger files=0
+ts=2026-07-01T11:50:26.375412Z lvl=info msg="Purge held files (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=end op_elapsed=0.099ms
+ts=2026-07-01T11:50:26.377076Z lvl=info msg="Snapshot for path written" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot path=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1 duration=42.789ms
+ts=2026-07-01T11:50:26.377090Z lvl=info msg="Cache snapshot (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=end op_elapsed=42.813ms
+ts=2026-07-01T11:50:36.334094Z lvl=info msg="Cache snapshot (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=start
+ts=2026-07-01T11:50:36.374417Z lvl=info msg="Purge held files (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=start
+ts=2026-07-01T11:50:36.374450Z lvl=info msg=added log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger count=0
+ts=2026-07-01T11:50:36.374535Z lvl=info msg=removed log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger files=0
+ts=2026-07-01T11:50:36.374588Z lvl=info msg="Purge held files (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=end op_elapsed=0.181ms
+ts=2026-07-01T11:50:36.376574Z lvl=info msg="Snapshot for path written" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot path=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1 duration=42.524ms
+ts=2026-07-01T11:50:36.376589Z lvl=info msg="Cache snapshot (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=end op_elapsed=42.545ms
+ts=2026-07-01T11:50:46.334636Z lvl=info msg="Cache snapshot (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=start
+ts=2026-07-01T11:50:46.377292Z lvl=info msg="Purge held files (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=start
+ts=2026-07-01T11:50:46.377313Z lvl=info msg=added log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger count=0
+ts=2026-07-01T11:50:46.377399Z lvl=info msg=removed log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger files=0
+ts=2026-07-01T11:50:46.377445Z lvl=info msg="Purge held files (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=end op_elapsed=0.169ms
+ts=2026-07-01T11:50:46.379283Z lvl=info msg="Snapshot for path written" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot path=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1 duration=44.702ms
+ts=2026-07-01T11:50:46.379300Z lvl=info msg="Cache snapshot (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=end op_elapsed=44.726ms
+ts=2026-07-01T11:50:56.334562Z lvl=info msg="Cache snapshot (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=start
+ts=2026-07-01T11:50:56.375078Z lvl=info msg="Purge held files (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=start
+ts=2026-07-01T11:50:56.375101Z lvl=info msg=added log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger count=0
+ts=2026-07-01T11:50:56.375185Z lvl=info msg=removed log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger files=0
+ts=2026-07-01T11:50:56.375217Z lvl=info msg="Purge held files (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=end op_elapsed=0.148ms
+ts=2026-07-01T11:50:56.377093Z lvl=info msg="Snapshot for path written" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot path=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1 duration=42.555ms
+ts=2026-07-01T11:50:56.377106Z lvl=info msg="Cache snapshot (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=end op_elapsed=42.574ms
+ts=2026-07-01T11:51:06.333987Z lvl=info msg="Cache snapshot (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=start
+ts=2026-07-01T11:51:06.376319Z lvl=info msg="Purge held files (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=start
+ts=2026-07-01T11:51:06.376346Z lvl=info msg=added log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger count=0
+ts=2026-07-01T11:51:06.376432Z lvl=info msg=removed log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger files=0
+ts=2026-07-01T11:51:06.376474Z lvl=info msg="Purge held files (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=end op_elapsed=0.161ms
+ts=2026-07-01T11:51:06.378026Z lvl=info msg="Snapshot for path written" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot path=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1 duration=44.066ms
+ts=2026-07-01T11:51:06.378043Z lvl=info msg="Cache snapshot (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=end op_elapsed=44.091ms
+ts=2026-07-01T11:51:16.334591Z lvl=info msg="Cache snapshot (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=start
+ts=2026-07-01T11:51:16.372691Z lvl=info msg="Purge held files (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=start
+ts=2026-07-01T11:51:16.372711Z lvl=info msg=added log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger count=0
+ts=2026-07-01T11:51:16.372779Z lvl=info msg=removed log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger files=0
+ts=2026-07-01T11:51:16.372812Z lvl=info msg="Purge held files (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=end op_elapsed=0.127ms
+ts=2026-07-01T11:51:16.374561Z lvl=info msg="Snapshot for path written" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot path=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1 duration=40.012ms
+ts=2026-07-01T11:51:16.374574Z lvl=info msg="Cache snapshot (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=end op_elapsed=40.031ms
+ts=2026-07-01T11:51:17.334316Z lvl=info msg="TSM compaction (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 tsm1_level=1 tsm1_strategy=level op_name=tsm1_compact_group op_event=start
+ts=2026-07-01T11:51:17.334350Z lvl=info msg="Beginning compaction" log_id=13oNSgy0000 service=storage-engine engine=tsm1 tsm1_level=1 tsm1_strategy=level op_name=tsm1_compact_group tsm1_files_n=8
+ts=2026-07-01T11:51:17.334353Z lvl=info msg="Compacting file" log_id=13oNSgy0000 service=storage-engine engine=tsm1 tsm1_level=1 tsm1_strategy=level op_name=tsm1_compact_group tsm1_index=0 tsm1_file=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1/000000017-000000001.tsm
+ts=2026-07-01T11:51:17.334357Z lvl=info msg="Compacting file" log_id=13oNSgy0000 service=storage-engine engine=tsm1 tsm1_level=1 tsm1_strategy=level op_name=tsm1_compact_group tsm1_index=1 tsm1_file=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1/000000018-000000001.tsm
+ts=2026-07-01T11:51:17.334360Z lvl=info msg="Compacting file" log_id=13oNSgy0000 service=storage-engine engine=tsm1 tsm1_level=1 tsm1_strategy=level op_name=tsm1_compact_group tsm1_index=2 tsm1_file=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1/000000019-000000001.tsm
+ts=2026-07-01T11:51:17.334363Z lvl=info msg="Compacting file" log_id=13oNSgy0000 service=storage-engine engine=tsm1 tsm1_level=1 tsm1_strategy=level op_name=tsm1_compact_group tsm1_index=3 tsm1_file=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1/000000020-000000001.tsm
+ts=2026-07-01T11:51:17.334366Z lvl=info msg="Compacting file" log_id=13oNSgy0000 service=storage-engine engine=tsm1 tsm1_level=1 tsm1_strategy=level op_name=tsm1_compact_group tsm1_index=4 tsm1_file=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1/000000021-000000001.tsm
+ts=2026-07-01T11:51:17.334378Z lvl=info msg="Compacting file" log_id=13oNSgy0000 service=storage-engine engine=tsm1 tsm1_level=1 tsm1_strategy=level op_name=tsm1_compact_group tsm1_index=5 tsm1_file=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1/000000022-000000001.tsm
+ts=2026-07-01T11:51:17.334380Z lvl=info msg="Compacting file" log_id=13oNSgy0000 service=storage-engine engine=tsm1 tsm1_level=1 tsm1_strategy=level op_name=tsm1_compact_group tsm1_index=6 tsm1_file=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1/000000023-000000001.tsm
+ts=2026-07-01T11:51:17.334383Z lvl=info msg="Compacting file" log_id=13oNSgy0000 service=storage-engine engine=tsm1 tsm1_level=1 tsm1_strategy=level op_name=tsm1_compact_group tsm1_index=7 tsm1_file=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1/000000024-000000001.tsm
+ts=2026-07-01T11:51:17.335537Z lvl=info msg="Purge held files (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=start
+ts=2026-07-01T11:51:17.335552Z lvl=info msg=added log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger count=0
+ts=2026-07-01T11:51:17.335564Z lvl=info msg="Compacted file" log_id=13oNSgy0000 service=storage-engine engine=tsm1 tsm1_level=1 tsm1_strategy=level op_name=tsm1_compact_group tsm1_index=0 tsm1_file=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1/000000024-000000002.tsm.tmp
+ts=2026-07-01T11:51:17.335568Z lvl=info msg="Finished compacting files" log_id=13oNSgy0000 service=storage-engine engine=tsm1 tsm1_level=1 tsm1_strategy=level op_name=tsm1_compact_group tsm1_files_n=1
+ts=2026-07-01T11:51:17.335571Z lvl=info msg="TSM compaction (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 tsm1_level=1 tsm1_strategy=level op_name=tsm1_compact_group op_event=end op_elapsed=1.262ms
+ts=2026-07-01T11:51:17.335573Z lvl=info msg=removed log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger files=0
+ts=2026-07-01T11:51:17.335645Z lvl=info msg="Purge held files (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=end op_elapsed=0.106ms
+ts=2026-07-01T11:51:26.334152Z lvl=info msg="Cache snapshot (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=start
+ts=2026-07-01T11:51:26.373624Z lvl=info msg="Purge held files (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=start
+ts=2026-07-01T11:51:26.373644Z lvl=info msg=added log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger count=0
+ts=2026-07-01T11:51:26.373722Z lvl=info msg=removed log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger files=0
+ts=2026-07-01T11:51:26.373738Z lvl=info msg="Purge held files (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=end op_elapsed=0.130ms
+ts=2026-07-01T11:51:26.375531Z lvl=info msg="Snapshot for path written" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot path=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1 duration=41.409ms
+ts=2026-07-01T11:51:26.375544Z lvl=info msg="Cache snapshot (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=end op_elapsed=41.428ms
+ts=2026-07-01T11:51:36.334476Z lvl=info msg="Cache snapshot (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=start
+ts=2026-07-01T11:51:36.374839Z lvl=info msg="Purge held files (start)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=start
+ts=2026-07-01T11:51:36.374868Z lvl=info msg=added log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger count=0
+ts=2026-07-01T11:51:36.374964Z lvl=info msg=removed log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger files=0
+ts=2026-07-01T11:51:36.374994Z lvl=info msg="Purge held files (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 service=filestore op_name=filestore_purger op_event=end op_elapsed=0.165ms
+ts=2026-07-01T11:51:36.376593Z lvl=info msg="Snapshot for path written" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot path=/home/ilya/zeta-stress/influx_data/engine/data/3e2af7e463600714/autogen/1 duration=42.144ms
+ts=2026-07-01T11:51:36.376607Z lvl=info msg="Cache snapshot (end)" log_id=13oNSgy0000 service=storage-engine engine=tsm1 op_name=tsm1_cache_snapshot op_event=end op_elapsed=42.164ms
